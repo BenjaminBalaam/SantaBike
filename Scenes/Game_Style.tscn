@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Levels.gd" type="Script" id=1]
+[ext_resource path="res://Other/Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/Background.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Infinite.gd" type="Script" id=4]
+[ext_resource path="res://Assets/back_button.png" type="Texture" id=5]
+[ext_resource path="res://Assets/back_button_pressed.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/BackButton.gd" type="Script" id=7]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.0232558, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 1
+
+[node name="Main" type="Node2D"]
+
+[node name="Levels" type="Button" parent="."]
+margin_left = 50.0
+margin_top = 200.0
+margin_right = 462.0
+margin_bottom = 350.0
+hint_tooltip = "Press to play levels"
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = ExtResource( 2 )
+action_mode = 0
+text = "Levels"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Infinite" type="Button" parent="."]
+margin_left = 562.0
+margin_top = 200.0
+margin_right = 974.0
+margin_bottom = 350.0
+hint_tooltip = "Press to play infinitely"
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = ExtResource( 2 )
+action_mode = 0
+text = "Infinite"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512, 296.104 )
+scale = Vector2( 1024, 600 )
+z_index = -2
+texture = SubResource( 2 )
+script = ExtResource( 3 )
+
+[node name="BackButton" type="TextureButton" parent="."]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 37.0
+margin_bottom = 37.0
+rect_scale = Vector2( 10, 10 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+expand = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Levels" to="Levels" method="_on_StartGame_pressed"]
+[connection signal="pressed" from="Infinite" to="Infinite" method="_on_ControlsButton_pressed"]
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_BackButton_pressed"]

@@ -1,0 +1,999 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Scripts/Scoreboard.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Swap Scoreboards.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Name Dialogue.gd" type="Script" id=3]
+[ext_resource path="res://Other/Font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scripts/bbScoreboard.gd" type="Script" id=5]
+[ext_resource path="res://Assets/back_button.png" type="Texture" id=6]
+[ext_resource path="res://Assets/back_button_pressed.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Name DialoguePost.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/NothingChanged.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/SomethingWrong.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/NameNotExisted.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Keyboard.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Keyboard_pressed.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Keyboard_disabled.png" type="Texture" id=14]
+[ext_resource path="res://Scripts/Keyboard.gd" type="Script" id=15]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Fonts/8-bit-pusab.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Fonts/8-bit-pusab.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 12
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://Fonts/8-bit-pusab.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 14
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://Fonts/8-bit-pusab.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 13
+font_data = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 12
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFontData" id=10]
+font_path = "res://Fonts/8-bit-pusab.ttf"
+
+[sub_resource type="DynamicFont" id=11]
+size = 15
+font_data = SubResource( 10 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 20
+font_data = SubResource( 10 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Centre" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Table Top" type="VBoxContainer" parent="Centre"]
+margin_left = 385.0
+margin_right = 638.0
+margin_bottom = 600.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Row 1" type="HBoxContainer" parent="Centre/Table Top"]
+margin_top = 47.0
+margin_right = 253.0
+margin_bottom = 94.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Top/Row 1"]
+margin_right = 36.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Top/Row 1"]
+margin_left = 40.0
+margin_right = 213.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "Loading"
+
+[node name="Label3" type="Label" parent="Centre/Table Top/Row 1"]
+margin_left = 217.0
+margin_right = 253.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "..."
+
+[node name="Row 2" type="HBoxContainer" parent="Centre/Table Top"]
+margin_top = 98.0
+margin_right = 253.0
+margin_bottom = 145.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Top/Row 2"]
+margin_left = 79.0
+margin_right = 108.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Top/Row 2"]
+margin_left = 112.0
+margin_right = 141.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Top/Row 2"]
+margin_left = 145.0
+margin_right = 174.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 3" type="HBoxContainer" parent="Centre/Table Top"]
+margin_top = 149.0
+margin_right = 253.0
+margin_bottom = 196.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Top/Row 3"]
+margin_left = 79.0
+margin_right = 108.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Top/Row 3"]
+margin_left = 112.0
+margin_right = 141.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Top/Row 3"]
+margin_left = 145.0
+margin_right = 174.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 4" type="HBoxContainer" parent="Centre/Table Top"]
+margin_top = 200.0
+margin_right = 253.0
+margin_bottom = 247.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Top/Row 4"]
+margin_left = 79.0
+margin_right = 108.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Top/Row 4"]
+margin_left = 112.0
+margin_right = 141.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Top/Row 4"]
+margin_left = 145.0
+margin_right = 174.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 5" type="HBoxContainer" parent="Centre/Table Top"]
+margin_top = 251.0
+margin_right = 253.0
+margin_bottom = 298.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Top/Row 5"]
+margin_left = 79.0
+margin_right = 108.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Top/Row 5"]
+margin_left = 112.0
+margin_right = 141.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Top/Row 5"]
+margin_left = 145.0
+margin_right = 174.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 6" type="HBoxContainer" parent="Centre/Table Top"]
+margin_top = 302.0
+margin_right = 253.0
+margin_bottom = 349.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Top/Row 6"]
+margin_left = 79.0
+margin_right = 108.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Top/Row 6"]
+margin_left = 112.0
+margin_right = 141.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Top/Row 6"]
+margin_left = 145.0
+margin_right = 174.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 7" type="HBoxContainer" parent="Centre/Table Top"]
+margin_top = 353.0
+margin_right = 253.0
+margin_bottom = 400.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Top/Row 7"]
+margin_left = 79.0
+margin_right = 108.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Top/Row 7"]
+margin_left = 112.0
+margin_right = 141.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Top/Row 7"]
+margin_left = 145.0
+margin_right = 174.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 8" type="HBoxContainer" parent="Centre/Table Top"]
+margin_top = 404.0
+margin_right = 253.0
+margin_bottom = 451.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Top/Row 8"]
+margin_left = 79.0
+margin_right = 108.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Top/Row 8"]
+margin_left = 112.0
+margin_right = 141.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Top/Row 8"]
+margin_left = 145.0
+margin_right = 174.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 9" type="HBoxContainer" parent="Centre/Table Top"]
+margin_top = 455.0
+margin_right = 253.0
+margin_bottom = 502.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Top/Row 9"]
+margin_left = 79.0
+margin_right = 108.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Top/Row 9"]
+margin_left = 112.0
+margin_right = 141.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Top/Row 9"]
+margin_left = 145.0
+margin_right = 174.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 10" type="HBoxContainer" parent="Centre/Table Top"]
+margin_top = 506.0
+margin_right = 253.0
+margin_bottom = 553.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Top/Row 10"]
+margin_left = 79.0
+margin_right = 108.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Top/Row 10"]
+margin_left = 112.0
+margin_right = 141.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Top/Row 10"]
+margin_left = 145.0
+margin_right = 174.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Table Personalised" type="VBoxContainer" parent="Centre"]
+visible = false
+margin_left = 514.0
+margin_right = 609.0
+margin_bottom = 600.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Row 1" type="HBoxContainer" parent="Centre/Table Personalised"]
+margin_top = 47.0
+margin_right = 95.0
+margin_bottom = 94.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Personalised/Row 1"]
+margin_right = 29.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Personalised/Row 1"]
+margin_left = 33.0
+margin_right = 62.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Personalised/Row 1"]
+margin_left = 66.0
+margin_right = 95.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 2" type="HBoxContainer" parent="Centre/Table Personalised"]
+margin_top = 98.0
+margin_right = 95.0
+margin_bottom = 145.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Personalised/Row 2"]
+margin_right = 29.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Personalised/Row 2"]
+margin_left = 33.0
+margin_right = 62.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Personalised/Row 2"]
+margin_left = 66.0
+margin_right = 95.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 3" type="HBoxContainer" parent="Centre/Table Personalised"]
+margin_top = 149.0
+margin_right = 95.0
+margin_bottom = 196.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Personalised/Row 3"]
+margin_right = 29.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Personalised/Row 3"]
+margin_left = 33.0
+margin_right = 62.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Personalised/Row 3"]
+margin_left = 66.0
+margin_right = 95.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 4" type="HBoxContainer" parent="Centre/Table Personalised"]
+margin_top = 200.0
+margin_right = 95.0
+margin_bottom = 247.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Personalised/Row 4"]
+margin_right = 29.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Personalised/Row 4"]
+margin_left = 33.0
+margin_right = 62.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Personalised/Row 4"]
+margin_left = 66.0
+margin_right = 95.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 5" type="HBoxContainer" parent="Centre/Table Personalised"]
+margin_top = 251.0
+margin_right = 95.0
+margin_bottom = 298.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Personalised/Row 5"]
+margin_right = 29.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Personalised/Row 5"]
+margin_left = 33.0
+margin_right = 62.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Personalised/Row 5"]
+margin_left = 66.0
+margin_right = 95.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 6" type="HBoxContainer" parent="Centre/Table Personalised"]
+margin_top = 302.0
+margin_right = 95.0
+margin_bottom = 349.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Personalised/Row 6"]
+margin_right = 29.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Personalised/Row 6"]
+margin_left = 33.0
+margin_right = 62.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Personalised/Row 6"]
+margin_left = 66.0
+margin_right = 95.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 7" type="HBoxContainer" parent="Centre/Table Personalised"]
+margin_top = 353.0
+margin_right = 95.0
+margin_bottom = 400.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Personalised/Row 7"]
+margin_right = 29.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Personalised/Row 7"]
+margin_left = 33.0
+margin_right = 62.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Personalised/Row 7"]
+margin_left = 66.0
+margin_right = 95.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 8" type="HBoxContainer" parent="Centre/Table Personalised"]
+margin_top = 404.0
+margin_right = 95.0
+margin_bottom = 451.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Personalised/Row 8"]
+margin_right = 29.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Personalised/Row 8"]
+margin_left = 33.0
+margin_right = 62.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Personalised/Row 8"]
+margin_left = 66.0
+margin_right = 95.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 9" type="HBoxContainer" parent="Centre/Table Personalised"]
+margin_top = 455.0
+margin_right = 95.0
+margin_bottom = 502.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Personalised/Row 9"]
+margin_right = 29.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Personalised/Row 9"]
+margin_left = 33.0
+margin_right = 62.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Personalised/Row 9"]
+margin_left = 66.0
+margin_right = 95.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Row 10" type="HBoxContainer" parent="Centre/Table Personalised"]
+margin_top = 506.0
+margin_right = 95.0
+margin_bottom = 553.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Centre/Table Personalised/Row 10"]
+margin_right = 29.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Centre/Table Personalised/Row 10"]
+margin_left = 33.0
+margin_right = 62.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="Label3" type="Label" parent="Centre/Table Personalised/Row 10"]
+margin_left = 66.0
+margin_right = 95.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "-"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+timeout = 10
+
+[node name="HTTPRequest2" type="HTTPRequest" parent="."]
+timeout = 10
+
+[node name="HTTPRequest3" type="HTTPRequest" parent="."]
+timeout = 10
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Top" type="Button" parent="Node2D"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 279.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 4 )
+text = "Top 10 Scores"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Personalised" type="Button" parent="Node2D"]
+margin_left = 745.0
+margin_top = 25.0
+margin_right = 999.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 4 )
+text = "Your Score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+pause_mode = 2
+margin_right = 320.0
+margin_bottom = 316.0
+script = ExtResource( 3 )
+
+[node name="LineEdit" type="LineEdit" parent="WindowDialog"]
+margin_left = 25.0
+margin_top = 145.0
+margin_right = 225.0
+margin_bottom = 210.0
+custom_fonts/font = SubResource( 5 )
+align = 1
+max_length = 16
+clear_button_enabled = true
+placeholder_text = "Enter your name"
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="WindowDialog"]
+margin_left = 25.0
+margin_top = 220.0
+margin_right = 225.0
+margin_bottom = 295.0
+custom_fonts/font = SubResource( 7 )
+text = "Show my score"
+
+[node name="NoName" type="Button" parent="WindowDialog"]
+margin_left = 25.0
+margin_top = 12.0
+margin_right = 225.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 9 )
+text = "Just show top 10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="WindowDialog"]
+margin_left = 84.0
+margin_top = 80.0
+margin_right = 166.0
+margin_bottom = 145.0
+custom_fonts/font = ExtResource( 4 )
+text = "OR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KeyBoard" type="TextureButton" parent="WindowDialog"]
+margin_left = 230.0
+margin_top = 145.0
+margin_right = 236.5
+margin_bottom = 151.5
+rect_scale = Vector2( 10, 10 )
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_disabled = ExtResource( 14 )
+expand = true
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowDialogPost" type="WindowDialog" parent="."]
+pause_mode = 2
+margin_right = 320.0
+margin_bottom = 180.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="WindowDialogPost"]
+margin_left = 25.0
+margin_top = 17.0
+margin_right = 225.0
+margin_bottom = 82.0
+custom_fonts/font = SubResource( 5 )
+align = 1
+max_length = 16
+clear_button_enabled = true
+placeholder_text = "Enter your name"
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="WindowDialogPost"]
+margin_left = 25.0
+margin_top = 92.0
+margin_right = 225.0
+margin_bottom = 167.0
+custom_fonts/font = SubResource( 13 )
+text = "Upload my score"
+
+[node name="KeyBoard" type="TextureButton" parent="WindowDialogPost"]
+margin_left = 230.0
+margin_top = 17.0
+margin_right = 236.5
+margin_bottom = 23.5
+rect_scale = Vector2( 10, 10 )
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_disabled = ExtResource( 14 )
+expand = true
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="TextureButton" parent="."]
+margin_left = 25.0
+margin_top = 455.0
+margin_right = 37.0
+margin_bottom = 467.0
+rect_scale = Vector2( 10, 10 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+expand = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NothingChanged" type="WindowDialog" parent="."]
+margin_right = 375.0
+margin_bottom = 180.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NothingChanged"]
+margin_right = 375.0
+margin_bottom = 121.0
+custom_fonts/font = SubResource( 11 )
+text = "Your score was lower than
+ your previous score, 
+so it was not added to the 
+table"
+align = 1
+
+[node name="Button" type="Button" parent="NothingChanged"]
+margin_left = 158.5
+margin_top = 125.0
+margin_right = 216.5
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 12 )
+text = "OK"
+
+[node name="SomethingWrong" type="WindowDialog" parent="."]
+margin_right = 375.0
+margin_bottom = 180.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SomethingWrong"]
+margin_right = 375.0
+margin_bottom = 121.0
+custom_fonts/font = SubResource( 11 )
+text = "Failed to send request,
+please try again later"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="SomethingWrong"]
+margin_left = 158.5
+margin_top = 125.0
+margin_right = 216.5
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 12 )
+text = "OK"
+
+[node name="NameNotExisted" type="WindowDialog" parent="."]
+margin_right = 375.0
+margin_bottom = 180.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NameNotExisted"]
+margin_right = 375.0
+margin_bottom = 121.0
+custom_fonts/font = SubResource( 11 )
+text = "That name does not
+exist"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="NameNotExisted"]
+margin_left = 158.5
+margin_top = 111.0
+margin_right = 216.5
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 12 )
+text = "OK"
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="request_completed" from="HTTPRequest2" to="WindowDialog" method="_on_HTTPRequest2_request_completed"]
+[connection signal="request_completed" from="HTTPRequest2" to="WindowDialogPost" method="_on_HTTPRequest2_request_completed"]
+[connection signal="request_completed" from="HTTPRequest3" to="WindowDialog" method="_on_HTTPRequest3_request_completed"]
+[connection signal="request_completed" from="HTTPRequest3" to="WindowDialogPost" method="_on_HTTPRequest3_request_completed"]
+[connection signal="pressed" from="Node2D/Top" to="Node2D" method="_on_Top_pressed"]
+[connection signal="pressed" from="Node2D/Personalised" to="Node2D" method="_on_Personalised_pressed"]
+[connection signal="pressed" from="WindowDialog/Button" to="WindowDialog" method="_on_Button_pressed"]
+[connection signal="pressed" from="WindowDialog/NoName" to="WindowDialog" method="_on_NoName_pressed"]
+[connection signal="pressed" from="WindowDialog/KeyBoard" to="WindowDialog/KeyBoard" method="_on_KeyBoard_pressed"]
+[connection signal="pressed" from="WindowDialogPost/Button" to="WindowDialogPost" method="_on_Button_pressed"]
+[connection signal="pressed" from="WindowDialogPost/KeyBoard" to="WindowDialogPost/KeyBoard" method="_on_KeyBoard_pressed"]
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_BackButton_pressed"]
+[connection signal="pressed" from="NothingChanged/Button" to="NothingChanged" method="_on_Button_pressed"]
+[connection signal="pressed" from="SomethingWrong/Button" to="SomethingWrong" method="_on_Button_pressed"]
+[connection signal="pressed" from="NameNotExisted/Button" to="NameNotExisted" method="_on_Button_pressed"]

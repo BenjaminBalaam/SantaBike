@@ -1,0 +1,153 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Scenes/Bike.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/window-b-f3.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/KillBox.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Arrow.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Brick.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Chimney-02.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Chimney-01.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Chimney-03.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Floor_piece_2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Floor_piece_3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Floor_piece_1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/window-b-f2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/window-a.png" type="Texture" id=14]
+[ext_resource path="res://Assets/window-b-f1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/window-c.png" type="Texture" id=16]
+[ext_resource path="res://Assets/seamless image2.png" type="Texture" id=17]
+[ext_resource path="res://Assets/stars.jpg" type="Texture" id=18]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4792.75, 947.741 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Variant 2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "Variant 1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "Variant 3",
+"speed": 5.0
+} ]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="Bike" parent="." instance=ExtResource( 1 )]
+
+[node name="Floor" parent="." instance=ExtResource( 12 )]
+position = Vector2( 250, -80 )
+
+[node name="Floor2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 826, -80 )
+
+[node name="Floor4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 2939.59, 643.989 )
+
+[node name="Floor6" parent="." instance=ExtResource( 11 )]
+position = Vector2( 5126.16, 404.061 )
+
+[node name="Floor8" parent="." instance=ExtResource( 10 )]
+position = Vector2( 7718.21, 166.196 )
+
+[node name="Floor5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3737.51, 540.868 )
+rotation = -0.20944
+
+[node name="Floor7" parent="." instance=ExtResource( 10 )]
+position = Vector2( 6578.11, 302.448 )
+rotation = -0.20944
+
+[node name="Floor3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1835.54, 236.09 )
+rotation = 0.436332
+
+[node name="Exit" parent="." instance=ExtResource( 3 )]
+position = Vector2( 8182.53, 775.212 )
+
+[node name="KillBox" type="Area2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBox"]
+position = Vector2( 4646.08, 477.68 )
+shape = SubResource( 1 )
+
+[node name="Arrow" parent="." instance=ExtResource( 5 )]
+position = Vector2( 8702.65, -13.8288 )
+rotation = -1.5708
+
+[node name="Wall" type="Polygon2D" parent="."]
+position = Vector2( 0, 8 )
+z_index = -1
+texture = ExtResource( 6 )
+texture_scale = Vector2( 0.05, 0.05 )
+polygon = PoolVector2Array( 22.5495, -46.7693, 1157.03, -37.6934, 2699.92, 670.221, 3253.54, 679.297, 4388.02, 443.325, 6085.2, 434.25, 7210.6, 198.278, 8317.85, 198.278, 8317.85, 1305.53, 8998.54, 1296.45, 8998.54, 2500, 22.549, 2500 )
+
+[node name="Chimneys" type="Node2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Chimneys"]
+position = Vector2( 1726.11, -162.752 )
+scale = Vector2( 15, 15 )
+z_index = -2
+frames = SubResource( 2 )
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Chimneys"]
+position = Vector2( 5887.95, 26.5316 )
+scale = Vector2( 15, 15 )
+z_index = -1
+frames = SubResource( 2 )
+frame = 1
+playing = true
+
+[node name="Windows" type="Node2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Windows"]
+position = Vector2( 5441.24, 930.903 )
+scale = Vector2( 15, 15 )
+frames = SubResource( 3 )
+animation = "Variant 2"
+frame = 2
+speed_scale = 0.2
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Windows"]
+position = Vector2( 2030.65, 713.862 )
+scale = Vector2( 15, 15 )
+frames = SubResource( 3 )
+animation = "Variant 1"
+speed_scale = 0.2
+playing = true
+
+[node name="Background-Mountains" type="Sprite" parent="."]
+position = Vector2( 4619.29, 947.289 )
+scale = Vector2( 6, 6 )
+z_index = -5
+texture = ExtResource( 17 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1920, 270 )
+
+[node name="Background-Stars" type="Sprite" parent="."]
+position = Vector2( 4630.65, 826.2 )
+z_index = -6
+texture = ExtResource( 18 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 11520, 4320 )
+[connection signal="body_exited" from="KillBox" to="KillBox" method="_on_KillBox_body_exited"]

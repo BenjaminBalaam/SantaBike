@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Other/Font.tres" type="DynamicFont" id=1]
+
+
+[node name="Controls" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 0.252
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_fonts/font = ExtResource( 1 )
+text = "Controls:
+Space, Click or Tab on a touchscreen will accelerate the bike."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

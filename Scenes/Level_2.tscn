@@ -1,0 +1,165 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Scenes/Bike.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Floor_piece_3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/KillBox.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Brick.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Chimney-02.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Chimney-01.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Chimney-03.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Floor_piece_2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/window-b-f3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/window-b-f2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/window-a.png" type="Texture" id=12]
+[ext_resource path="res://Assets/window-b-f1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/window-c.png" type="Texture" id=14]
+[ext_resource path="res://Assets/LD_stars.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/Background2.gd" type="Script" id=16]
+[ext_resource path="res://Assets/LD_backrgound.png" type="Texture" id=17]
+[ext_resource path="res://Assets/brown.png" type="Texture" id=18]
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5720.92, 965.421 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Variant 2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Variant 1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "Variant 3",
+"speed": 5.0
+} ]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="Bike" parent="." instance=ExtResource( 1 )]
+
+[node name="Floor" parent="." instance=ExtResource( 2 )]
+position = Vector2( 746, -80 )
+
+[node name="Floor2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2170.21, 161.25 )
+rotation = 0.502655
+
+[node name="Floor4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3207.79, 593.657 )
+rotation = 0.251327
+
+[node name="Floor6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 5395.14, 558.191 )
+rotation = -0.418879
+
+[node name="Floor9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 8886.85, 691.689 )
+
+[node name="Floor7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 6742.79, 353.373 )
+rotation = 0.0837758
+
+[node name="Floor5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4319.29, 753.722 )
+
+[node name="Exit" parent="." instance=ExtResource( 3 )]
+position = Vector2( 9751.38, 209.576 )
+
+[node name="KillBox" type="Area2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBox"]
+position = Vector2( 5320.91, 347.518 )
+shape = SubResource( 1 )
+
+[node name="Wall" type="Polygon2D" parent="."]
+position = Vector2( 0, 8 )
+z_index = -1
+texture = ExtResource( 5 )
+texture_scale = Vector2( 0.05, 0.05 )
+polygon = PoolVector2Array( 40.7212, -41.0615, 1723.83, -30.4758, 2708.29, 509.389, 3819.78, 795.2, 4973.61, 795.2, 6010.99, 329.434, 7683.52, 477.633, 7683.52, 2500, 40.721, 2500 )
+
+[node name="Wall2" type="Polygon2D" parent="."]
+position = Vector2( 0, 8 )
+z_index = -1
+texture = ExtResource( 5 )
+texture_scale = Vector2( 0.05, 0.05 )
+polygon = PoolVector2Array( 8169.59, 722.761, 10567.8, 737.473, 10567.8, 2500, 8169.59, 2500 )
+
+[node name="Chimneys" type="Node2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Chimneys"]
+position = Vector2( 1277.77, -476.689 )
+scale = Vector2( 15, 15 )
+z_index = -1
+frames = SubResource( 2 )
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Chimneys"]
+position = Vector2( 6675.88, -71.2805 )
+scale = Vector2( 15, 15 )
+z_index = -1
+frames = SubResource( 2 )
+frame = 1
+playing = true
+
+[node name="Windows" type="Node2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Windows"]
+position = Vector2( 5441.24, 930.903 )
+scale = Vector2( 15, 15 )
+frames = SubResource( 3 )
+animation = "Variant 2"
+frame = 1
+speed_scale = 0.2
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Windows"]
+position = Vector2( 2361.81, 671.715 )
+scale = Vector2( 15, 15 )
+frames = SubResource( 3 )
+animation = "Variant 3"
+speed_scale = 0.2
+playing = true
+
+[node name="LD_Background" type="Sprite" parent="."]
+position = Vector2( 5550.12, 75.3617 )
+scale = Vector2( 20, 20 )
+z_index = -5
+texture = ExtResource( 17 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 600, 100 )
+script = ExtResource( 16 )
+
+[node name="LD_Stars" type="Sprite" parent="."]
+position = Vector2( 5509.76, 855.713 )
+scale = Vector2( 20, 20 )
+z_index = -7
+texture = ExtResource( 15 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 600, 200 )
+script = ExtResource( 16 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 5523.24, 2186.85 )
+scale = Vector2( 12202.9, 2235.4 )
+z_index = -6
+texture = ExtResource( 18 )
+[connection signal="body_exited" from="KillBox" to="KillBox" method="_on_KillBox_body_exited"]

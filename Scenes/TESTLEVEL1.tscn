@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Bike.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Floor_piece_Vertical.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/TESTLEVEL1.gd" type="Script" id=7]
+
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 600.0
+rough = true
+bounce = 0.1
+
+[node name="TESTLEVEL1" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Floor" parent="." instance=ExtResource( 2 )]
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+position = Vector2( 986.035, 589.614 )
+rotation = 0.441568
+physics_material_override = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floor2"]
+polygon = PoolVector2Array( -248.705, 14.505, -248.705, 78.505, 327.295, 78.505, 327.295, 14.505 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Floor2"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -248.705, 14.505, -248.705, 14.505, -248.705, 78.505, -248.705, 78.505, 327.295, 78.505, 327.295, 78.505, 327.295, 14.505 )
+
+[node name="Floor4" type="StaticBody2D" parent="."]
+position = Vector2( 2103, 608 )
+rotation = -0.471239
+physics_material_override = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floor4"]
+polygon = PoolVector2Array( -248.705, 14.505, -248.705, 78.505, 210.481, 80.3096, 207.392, 15.8855 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Floor4"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -248.705, 14.505, -248.705, 14.505, -248.705, 78.505, -248.705, 78.505, 210.481, 80.3096, 210.481, 80.3096, 207.392, 15.8855 )
+
+[node name="Floor3" type="StaticBody2D" parent="."]
+position = Vector2( 1495.46, 724.196 )
+physics_material_override = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floor3"]
+polygon = PoolVector2Array( -248.705, 14.505, -248.705, 78.505, 327.295, 78.505, 327.295, 14.505 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Floor3"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -248.705, 14.505, -248.705, 14.505, -248.705, 78.505, -248.705, 78.505, 327.295, 78.505, 327.295, 78.505, 327.295, 14.505 )
+
+[node name="Floor5" type="StaticBody2D" parent="."]
+position = Vector2( 2810.73, 491.523 )
+physics_material_override = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floor5"]
+build_mode = 1
+polygon = PoolVector2Array( -248.705, 14.505, -248.705, 78.505, 327.295, 78.505, 327.295, 14.505 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Floor5"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -248.705, 14.505, -248.705, 14.505, -248.705, 78.505, -248.705, 78.505, 327.295, 78.505, 327.295, 78.505, 327.295, 14.505 )
+
+[node name="Bike" parent="." instance=ExtResource( 1 )]

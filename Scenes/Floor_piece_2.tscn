@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Roof.png" type="Texture" id=1]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 600.0
+rough = true
+
+[node name="Floor" type="StaticBody2D"]
+position = Vector2( 428, 482 )
+physics_material_override = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 2, 1 )
+polygon = PoolVector2Array( -248.705, 14.505, -248.705, 78.505, 327.295, 78.505, 327.295, 14.505 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+scale = Vector2( 2, 1 )
+texture = ExtResource( 1 )
+texture_offset = Vector2( 6, -14 )
+texture_scale = Vector2( 0.066, 0.031 )
+polygon = PoolVector2Array( -248.705, 14.505, -248.705, 14.505, -248.705, 78.505, -248.705, 78.505, 327.295, 78.505, 327.295, 78.505, 327.295, 14.505 )
