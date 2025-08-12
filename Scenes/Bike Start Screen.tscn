@@ -1,0 +1,156 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/BikeStats.png" type="Texture" id=2]
+[ext_resource path="res://Assets/BikeStatsBar.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Bike Start Screen.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Fonts/8-bit-pusab.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 45
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+font_data = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="BikeUsing" type="Label" parent="CanvasLayer"]
+anchor_right = 0.252
+margin_right = 765.952
+margin_bottom = 300.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "You are using Bike #1!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="continue" type="Label" parent="CanvasLayer"]
+anchor_right = 0.252
+margin_top = 500.0
+margin_right = 765.952
+margin_bottom = 600.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Press accelerate to continue"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeedLabel" type="Label" parent="CanvasLayer"]
+anchor_right = 0.252
+margin_left = 50.0
+margin_top = 295.0
+margin_right = -16.048
+margin_bottom = 345.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Speed"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DampingLabel" type="Label" parent="CanvasLayer"]
+anchor_right = 0.252
+margin_left = 50.0
+margin_top = 370.0
+margin_right = -16.048
+margin_bottom = 420.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Friction"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WeightLabel" type="Label" parent="CanvasLayer"]
+anchor_right = 0.252
+margin_left = 50.0
+margin_top = 445.0
+margin_right = -16.048
+margin_bottom = 495.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Weight"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed" type="TextureProgress" parent="CanvasLayer"]
+margin_left = 256.0
+margin_top = 300.0
+margin_right = 768.0
+margin_bottom = 340.0
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+tint_progress = Color( 0, 1, 0, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Damping" type="TextureProgress" parent="CanvasLayer"]
+margin_left = 256.0
+margin_top = 375.0
+margin_right = 768.0
+margin_bottom = 415.0
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+tint_progress = Color( 0, 1, 0, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Weight" type="TextureProgress" parent="CanvasLayer"]
+margin_left = 256.0
+margin_top = 450.0
+margin_right = 768.0
+margin_bottom = 490.0
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+tint_progress = Color( 0, 1, 0, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+timeout = 10
